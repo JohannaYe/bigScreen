@@ -1,0 +1,27 @@
+version: '2'
+services: 
+    backend:
+        image: ss
+        container_name: backend
+        environment:
+            DB: 172.29.24.22:3306/jeecg-boot
+            DB_USER: root
+            DB_PWD: root
+            REDIS: 172.29.24.22
+            REDIS_PORT: 6379
+            REDIS_PWD: ''
+            LICENCE: 5798DB91AC92997F876916A86AED5820,F383718C77F1790E186BC3B554476FE8,C8402E8A0E04A76FCB232DBF704257D2
+        ports:
+            - 8080:8080
+        mac_address: 80:fa:5b:50:70:65
+    front:
+        image: vv
+        container_name: front
+        environment:
+            BASE_URL: http://172.29.24.22:8080/jeecg-boot/        
+        ports:
+            - 8082:80
+        
+
+
+              
